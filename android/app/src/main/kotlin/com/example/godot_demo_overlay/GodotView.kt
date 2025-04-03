@@ -24,10 +24,15 @@ class GodotView(
     init {
         linearLayout = LinearLayout(context)
         linearLayout.layoutParams = ViewGroup.LayoutParams(
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
         )
         frameLayout = FrameLayout(context)
+        frameLayout.layoutParams = ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+        )
+
         frameLayout.id = View.generateViewId()
         linearLayout.addView(frameLayout)
 
@@ -35,7 +40,7 @@ class GodotView(
             //frameLayout.layoutParams.height = 300
             val fragmentTransaction = activity.supportFragmentManager.beginTransaction()
             val godotFragment = GodotFragment()
-            fragmentTransaction.replace(frameLayout.id, godotFragment)
+            fragmentTransaction.replace(frameLayout.id, BlankFragment())
             fragmentTransaction.commit()
 
             activity.godotFragment = godotFragment;

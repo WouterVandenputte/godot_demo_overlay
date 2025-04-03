@@ -42,6 +42,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: GodotView(),
           ),
           Align(
+            alignment: Alignment.centerLeft,
+            child:
+                Container(color: Colors.purpleAccent, width: 100, height: 100),
+          ),
+          Align(
             alignment: Alignment.bottomRight,
             child: FloatingActionButton.large(
               onPressed: () {},
